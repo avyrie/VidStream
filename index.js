@@ -2,9 +2,12 @@
 // const require = createRequire(import.meta.url);
 const express = require("express");
 const fs = require("fs");
+const path = require('path');
 // file system, allows us to stream our video by making a file stream and returning it back to the client
 const app = express();
 const PORT = 8000;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
@@ -17,6 +20,7 @@ app.get("/video", function (req, res) {
     if (!range) {
         res.status(400).send("Requires Range Header");
     };
+
     const videoPath = "mapVideo.mp4";
     const videoSize = fs.statSync("mapVideo.mp4").size;
     // find the size of the video, tells client how big video is

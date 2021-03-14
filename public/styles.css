@@ -1,0 +1,27 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgb(51, 97, 77), rgb(90, 230, 99));
+}
+h1 {
+    color: rgb(197, 231, 216);
+    text-align: center;
+    text-decoration: underline;
+    font-family:Verdana, Tahoma, sans-serif;
+    font-size: 30px;
+}
+#videoPlayer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    border: 5px solid rgb(197, 231, 216);
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family:Verdana, Tahoma, sans-serif;
+    color: rgb(51, 97, 77);
+}
